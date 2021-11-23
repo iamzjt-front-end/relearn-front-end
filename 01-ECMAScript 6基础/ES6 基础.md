@@ -1,4 +1,4 @@
-# 第十三章 ECMAScript 6 基础
+# ECMAScript 6 基础
 
 ## ECMAScript 6 简介
 - JavaScript 三大组成部分
