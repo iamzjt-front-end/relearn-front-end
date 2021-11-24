@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [
+        ['a', 1],
+        ['b', 2],
+        ['c', 3]
+    ];
+    let m = new Map(arr);
+    console.log(m);
+    // [
+    //     {
+    //         key: 'a',
+    //         value: 1
+    //     },
+    //     {
+    //         key: 'b',
+    //         value: 2
+    //     },
+    //     {
+    //         key: 'c',
+    //         value: 3
+    //     },
+    // ]
+    
+    // m.clear();
+    // console.log(m);
+    
+    // m.delete('a');
+    // console.log(m);
+    // console.log(m.delete('a'));
+
+    // console.log(m.get('a'));
+    
+    // m.set('d', 4);
+    // console.log(m);
+    // m.set('a', 2);
+    // console.log(m);
+    m.set('d', 4).set('e', 5);
+    console.log(m);
+
+    /*
+        clear() 清空所有值
+        
+        delete(key) 删除某一项
+        参数：key 要删除数据的key值
+        返回值：true || false 是否删除成功
+        
+        get(key) 获取某一项值
+        参数：key 要获取数据的key值
+        返回值：key 对应的value值
+        
+        has(key) 是否包含某一项
+        参数：key 数据的key值
+        返回值：true || false 是否包含这个值
+        
+        set(key, value) 设置这个值
+        参数：key 数据的key值, value 数据的value值
+        返回值：map对象本身, 可以进行链式操作
+     */
+</script>
+</body>
+</html>

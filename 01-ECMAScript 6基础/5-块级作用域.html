@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ul>
+<script>
+    // (function () {
+    //
+    // })()
+
+    // {
+    //     let a = 1;
+    //     console.log(a);
+    // }
+    
+    // if (true) {
+    //     let a = 1;
+    // }
+
+    {
+        let lis = document.querySelectorAll("li");
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                console.log(i);
+            }
+        }
+
+        // {
+        //     let i = 0;
+        //     lis[i].onclick = function () {
+        //         console.log(i);
+        //     };
+        // }
+        // {
+        //     let i = 1;
+        //     lis[i].onclick = function () {
+        //         console.log(i);
+        //     };
+        // }
+        // {
+        //     let i = 2;
+        //     lis[i].onclick = function () {
+        //         console.log(i);
+        //     };
+        // }
+    }
+</script>
+</body>
+</html>
