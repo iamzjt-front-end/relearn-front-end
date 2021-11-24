@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "abc";
+    let [e, f] = str;
+    console.log(e, f); // a, b
+    
+    let nub = 123;
+    let [c, d] = nub;
+    console.log(c, d); // Uncaught TypeError: nub is not iterable
+</script>
+</body>
+</html>
