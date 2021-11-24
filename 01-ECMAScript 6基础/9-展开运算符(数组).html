@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4];
+    let arr2 = ['a', 'b', ...arr, 'c', 'd'];
+    console.log(arr2);
+    
+    // 剩余参数
+    let [a, b, ...c] = arr;
+    console.log(a, b, c);
+</script>
+</body>
+</html>
