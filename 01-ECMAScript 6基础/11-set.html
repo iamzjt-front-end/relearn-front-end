@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 构造函数  用来构建某一类型的对象 - 对象的实例化
+    
+    let arr = [2, 1, 2, 1, 3, 4, 4, 5, 1];
+    let s = new Set(arr);
+    console.log(s); // Set(5) {2, 1, 3, 4, 5} 去重后的结果
+    
+    arr = [...s];
+    console.log(arr); // [2, 1, 3, 4, 5] 会把第一次出现的值保留
+</script>
+</body>
+</html>
