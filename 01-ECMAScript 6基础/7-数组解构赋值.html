@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = ['1', '2', '3'];
+    // let [a, b, c] = arr;
+    // console.log(a, b, c);
+
+    // let [a, b] = arr;
+    // console.log(a, b);
+    
+    let a = 0;
+    let b = 1;
+    // 怎样快速交换a, b的值？
+    
+    // 解法1：
+    // let c = a;
+    // a = b;
+    // b = c;
+    
+    // 解法2：
+    [b, a] = [a, b];
+    console.log(a, b); // 1 0
+</script>
+</body>
+</html>
