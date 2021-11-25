@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ul>
+
+
+<script>
+    /*
+        Array.from() 把一个类数组转换成真正的数组
+            类数组： 有下标有length
+        返回值：
+            转换之后的新数组
+     */
+    
+    // 拿时间戳
+    // new Date().getTime();
+    // Date.now();
+    
+    // new Array()
+    // Array.from()  // 数组构造函数下的方法
+    // arr.forEach()  // 数组本身的方法
+
+
+    {
+        let lis = document.querySelectorAll("#list li");
+        // console.log(lis);
+        
+        // lis.map(item => {
+        //     return item;
+        // })  // lis.map is not a function
+        
+        lis = Array.from(lis);
+        console.log(lis);
+
+        lis.map(item => {
+            return item;
+        })
+    }
+</script>
+</body>
+</html>
