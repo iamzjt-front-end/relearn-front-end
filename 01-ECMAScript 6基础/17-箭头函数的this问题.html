@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // document.onclick = function() {
+    //     console.log(this); // document
+    // }
+
+    // document.onclick = () => {
+    //     console.log(this); // window
+    // }
+
+    // document.onclick = function() {
+    //     // let fn = () => {
+    //     //     console.log(this); // document
+    //     // }
+    //
+    //     function fn() {
+    //         console.log(this); // window
+    //     }
+    //     fn();
+    // }
+    
+    // let fn;
+    // let fn2 = function () {
+    //     console.log(this); // window
+    //     fn = () => {
+    //         console.log(this); // window
+    //     }
+    //
+    // }
+    // fn2();
+    // fn();
+
+    let fn;
+    let fn2 = function () {
+        console.log(this); // body
+        fn = () => {
+            console.log(this); // body
+        }
+    }
+    fn2 = fn2.bind(document.body);
+    fn2();
+    fn();
+    
+    
+    /*
+        箭头函数本身没有this, 调用箭头函数的 this 时, 指向其声明时, 所在的作用域的this;
+     */
+</script>
+</body>
+</html>
