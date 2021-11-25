@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ul>
+
+<script>
+    {
+        let lis = document.querySelectorAll("#list li");
+        let arr = [];
+        lis = Array.from(lis, (item, index) => {
+            console.log(item, index);
+            return index;
+        }, arr)
+
+        lis = [...lis];
+        console.log(lis);
+    }
+</script>
+</body>
+</html>
