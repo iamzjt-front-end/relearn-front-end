@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  arr = [1, 2, 3, 4, 'a', 'b', 'c', 'd'];
+    // console.log(arr.indexOf('a')); // 有就返回索引, 没有就返回-1
+    
+    // let val = arr.find((item, index) => {
+    //     if (item > 3) {
+    //         return true;
+    //     }
+    // });
+    
+    // let val = arr.find(item => item > 3);
+    // console.log(val); // 4
+    
+    
+    let val = arr.find(item => item > 5); // undefined
+    console.log(val); // undefined
+</script>
+</body>
+</html>
