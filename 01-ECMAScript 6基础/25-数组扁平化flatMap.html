@@ -12,11 +12,12 @@
     ]
 
     let newArr = arr.flatMap((item, index) => {
-        console.log(item, index);
-        // ['小明', '18'] 0
-        // ['小刚', '20'] 1
+        item = item.filter((item, index) => {
+            return index === 0;
+        })
+        return item;
     });
-    console.log(newArr); // [undefined, undefined]
+    console.log(newArr);
 </script>
 </body>
 </html>
