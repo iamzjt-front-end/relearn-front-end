@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ul>
+<script>
+    {
+        let lis = document.querySelectorAll("#list li");
+        
+        console.log(Array.isArray(lis)); // false
+
+        console.log(Array.isArray(Array.from(lis))); // true
+    }
+</script>
+</body>
+</html>
