@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let fn = (a, b) => {
+    //     console.log(a * b); // NaN
+    // }
+    // fn();
+
+    // let fn = (a, b) => {
+    //     a = a || 10;
+    //     b = b || 2;
+    //     console.log(a * b); // 20
+    // }
+    // fn();
+
+    // let fn = (a, b) => {
+    //     a = typeof a === "undefined" ? 10 : a;
+    //     b = typeof b === "undefined" ? 2 : b;
+    //     console.log(a * b); // 20
+    // }
+    // fn();
+
+    let fn = (a=10, b=2) => {
+        console.log(a * b); // 20
+    }
+    fn();
+</script>
+</body>
+</html>
