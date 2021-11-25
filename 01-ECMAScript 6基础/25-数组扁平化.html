@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [
+        ['小明', '18'],
+        ['小刚', '20']
+    ]
+
+    let newArr = arr.flatMap((item, index) => {
+        console.log(item, index);
+        // ['小明', '18'] 0
+        // ['小刚', '20'] 1
+    });
+    console.log(newArr); // [undefined, undefined]
+</script>
+</body>
+</html>
