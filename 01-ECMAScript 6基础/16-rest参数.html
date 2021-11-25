@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // reset参数  剩余参数
+    
+    // let fn = (...arg) => {
+    //     console.log(arg); // Array [1, 2, 3, 4]
+    // }
+    // fn(1, 2, 3, 4);
+
+    let fn = (a, b, ...arg) => {
+        console.log(arg);
+    }
+    fn(1, 2, 3, 4);
+</script>
+</body>
+</html>
