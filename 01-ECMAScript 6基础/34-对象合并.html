@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let obj = {
+        a: 1,
+        b: 2
+    }
+    
+    // let obj2 = {
+    //     ...obj,
+    //     c: 3,
+    //     d: 4
+    // }
+    // console.log(obj2); // {a: 1, b: 2, c: 3, d: 4}
+
+    let obj2 = {
+        c: 3,
+        d: 4
+    }
+    // Object.assign(obj2, obj);
+    // console.log(obj2); // {c: 3, d: 4, a: 1, b: 2}
+
+    console.log(Object.assign({}, obj, obj2)); // {a: 1, b: 2, c: 3, d: 4}
+</script>
+</body>
+</html>
