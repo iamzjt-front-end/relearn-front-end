@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Object.is(value1, value2)  判断两个值是否是相同的值
+    
+    // console.log(Object.is(1, '1')); // true
+
+    console.log(+0 === -0); // true
+    console.log(Object.is(+0, -0)); // false
+    console.log(Object.is(NaN, NaN)); // true
+</script>
+</body>
+</html>
