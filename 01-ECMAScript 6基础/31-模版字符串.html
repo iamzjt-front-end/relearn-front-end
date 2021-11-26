@@ -8,12 +8,15 @@
 <p></p>
 <script>
     let p = document.querySelector('P');
-    let name = '小明';
+    let name = () => {
+        let n = '小明';
+        return n;
+    };
     let age = '18';
     let school = '初中';
     // p.innerHTML = '今年<strong>' + name + '</strong>就要<strong>' + age + '</strong>岁了，终于升入<strong>' + school + '</strong>了';
     p.innerHTML = `
-                    今年<strong>${name}</strong>就要<strong>${age}</strong>岁了，
+                    今年<strong>${name()}</strong>就要<strong>${age}</strong>岁了，
                     终于升入<strong>${school}</strong>了
                   `;
 
