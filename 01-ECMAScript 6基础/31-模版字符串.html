@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p></p>
+<script>
+    let p = document.querySelector('P');
+    let name = '小明';
+    let age = '18';
+    let school = '初中';
+    // p.innerHTML = '今年<strong>' + name + '</strong>就要<strong>' + age + '</strong>岁了，终于升入<strong>' + school + '</strong>了';
+    p.innerHTML = `
+                    今年<strong>${name}</strong>就要<strong>${age}</strong>岁了，
+                    终于升入<strong>${school}</strong>了
+                  `;
+
+    // console.log(`
+    //               今年<strong>${name}</strong>就要<strong>${age}</strong>岁了，
+    //               终于升入<strong>${school}</strong>了
+    //             `);
+
+    // console.log(`
+    //               今年<strong>${name}</strong>就要<strong>${age}</strong>岁了，
+    //               终于升入<strong>${school}</strong>了
+    //             `.trim());
+
+    // trim()  用于删除字符串的头尾空白符，空白符包括：空格、制表符 tab、换行符等其他空白符等。
+</script>
+</body>
+</html>
