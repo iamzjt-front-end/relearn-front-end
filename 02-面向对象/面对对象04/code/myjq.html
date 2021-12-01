@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./myjq.js" type="text/javascript"></script>
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+<script>
+// $(".box1").click(function(){
+//     console.log("something...")
+// })
+// console.log($("div"));
+// let res = $(document.querySelector(".box1"));
+// let res = $(document.querySelectorAll("div"));
+// // console.log(res);
+// res.click(function(){
+//     console.log(1111122);
+// })
+// then().then()
+// $("div").eq(0).click(function(){
+//     console.log(2222);
+// })
+
+// console.log($("div").eq(0));
+// $("div").eq(0).click(function(){
+//     console.log(1111);
+// })
+// let res = $("div").eq(0).end();
+// console.log(res);
+// $(".box1").click(function(){
+//     console.log(1111);
+// })
+
+// $(".box1").on("mouseover   mousedown  ",function(){
+//     console.log("333");
+// })
+
+// let res = $("div").css("background");
+// console.log(res)
+
+// $("div").css("width",200);
+// $.cssNumber['wh'] = true;
+
+// $("div").css("opacity",0.5);
+// $("div").css({"width":"200px","height":"200px"});
+
+$.cssHooks['wh'] = {
+    get(ele){
+        console.log(ele);
+        return ele.offsetWidth + " " + ele.offsetHeight;
+    },
+    set(ele,value){
+        ele.style.width = value;
+        ele.style.height = value;
+    }
+}
+// let res = $("div").css("wh");
+// console.log(res);
+
+$("div").css("wh","200px");
+
+</script>
+</html>

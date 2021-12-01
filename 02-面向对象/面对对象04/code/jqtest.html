@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery-3.4.1.js" type="text/javascript"></script>
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+<script>
+    // console.log($("div"));
+    // let obj = {
+    //     click(){
+
+    //     }
+    // }
+    // obj.click();
+    // $(".box1").click
+    // $()
+
+        // function $(arg){
+
+        // }
+//方式一；
+// console.log($(".box1"));
+//方式二；
+// $(function(){
+    
+//     console.log("1111");
+
+// })
+// 方式三
+
+// $(document.querySelector(".box1")).click(function(){
+//     console.log(1111);
+// })
+
+// end();  //获取到上次操作的节点对象；
+
+// let res = $("div").end();
+// console.log(res);
+// $("div").on("mouseover   mousedown  ",function(){
+//     console.log("222222");
+// })
+// 方式一
+// let res = $("div").css("background");
+// console.log(res);
+// 方式二
+// let res =  $("div").css("width",200);
+//方式三
+// let res =  $("div").css({"width":"200px","height":"200px"});
+// $.cssNumber['py'] = true;
+// console.log($.cssNumber);
+// py 
+// "wh"  --- >既设置  高度  又设置宽度；
+$.cssHooks['wh'] = {
+    get(ele){
+        console.log(ele);
+        return ele.offsetWidth + " " + ele.offsetHeight;
+    },
+    set(ele,value){
+        ele.style.width = value;
+        ele.style.height = value;
+    }
+}
+let res = $("div").css("wh");
+console.log(res);
+
+// $("div").css("wh","200px");
+
+
+</script>
+</html>
