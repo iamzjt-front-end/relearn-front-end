@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="babel.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    let a = 0;
+    let b = 1;
+    let obj = {
+        a,
+        b,
+        c() {
+            console.log(1);
+        }
+    }
+    
+    let obj2 = {
+        d: 4,
+        ...obj,
+        e: 5
+    }
+    console.log(obj2);
+</script>
+</body>
+</html>
+
