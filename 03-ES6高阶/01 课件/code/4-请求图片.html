@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function loadImg() {
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            // img.src = "http://img0.imgtn.bdimg.com/it/u=1551039200,1108067788&fm=26&gp=0.jpg";
+            img.src = "http://img0.imgtn.bdim";
+            img.onload = function () {
+                // console.log("图片加载完成");
+                // cb && cb();
+                resolve("图片加载完成");
+            }
+            img.onerror = function () {
+                // console.log("图片加载失败")
+                reject("图片加载失败");
+            }
+        })
+    }
+    loadImg().then(res=>{
+        console.log(res);
+        console.log("成功之后的逻辑..")
+    },err=>{
+        console.log(err)
+    });
+
+
+
+
+</script>
+
+</html>
