@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+// var a  = 10;
+// var a  =20;
+// console.log(a)
+
+// const a = 10;
+// a = 20;
+// console.log(a);
+
+const a = {
+    name:"张三",
+    age:10
+}
+a.name = "李四";
+console.log(a);
+
+// let obj  = {
+//     a:10,
+//     b:20
+// }
+// let {a:mya, b} = obj;
+// console.log(mya);
+
+// 不定参
+// function test(...arg){
+//   console.log(arguments);
+// console.log(arg);
+// }
+// test(10,20,30)
+
+// let test = (a)=>a;
+// let test = (a)=>{
+//     return a;
+// }
+let test = ()=>({name:"张三",age:20});
+console.log(test());
+
+</script>
+</html>
