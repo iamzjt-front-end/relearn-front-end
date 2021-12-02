@@ -7,12 +7,17 @@
 <body>
 <script>
     console.log(111);
-    function fn() {
-        alert('弹框');
-        console.log(222);
+    function fn(cb) {
+        // alert('弹框');
+        // console.log(222);
+        setTimeout(() => {
+            console.log(222);
+            cb();
+        }, 1000)
     }
-    fn();
-    console.log(333);
+    fn(function () {
+        console.log(333);
+    });
 </script>
 </body>
 </html>
