@@ -12,7 +12,7 @@
         // console.log(222);
         setTimeout(() => {
             console.log(222);
-            cb();
+            cb && cb();
         }, 1000)
     }
     fn(function () {
