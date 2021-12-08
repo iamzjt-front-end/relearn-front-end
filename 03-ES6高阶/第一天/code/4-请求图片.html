@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function loadImg() {
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            img.src = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1bf01821f725bd8ef649a7fc540311ffa300d5ec.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641538117&t=baf53acde2e42cba5bf49438d6392780";
+            // img.src = "https://gimg.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F1bf01821f725bd8ef649a7fc540311ffa300d5ec.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641538117&t=baf53acde2e42cba5bf49438d6392780";
+            img.onload = function () {
+                resolve("图片加载完成");
+            }
+            img.onerror = function () {
+                reject("图片加载失败");
+            }
+        })
+    }
+    loadImg().then(res => {
+        console.log(res);
+    }, err => {
+        console.log(err);
+    });
+</script>
+</html>
