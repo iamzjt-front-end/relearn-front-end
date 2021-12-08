@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    /**
+     * 移动方块函数
+     * @param ele 需要移动的元素
+     * @param arg 移动方向  left 和 top
+     * @param target 移动目的位置
+     */
+    function move(ele, arg, target) {
+        return new Promise((resolve, reject) => {
+            let start = parseInt(window.getComputedStyle(ele, null)[arg]);
+            // 首先是有两个参数，元素和伪类。第二个参数不是必须的，当不查询伪类元素的时候可以忽略或者传入 null
+            let dis = (target - start) / Math.abs(target - start); // 正值 往右  负值 往左
+            let speed = dis * 2;
+
+            function fn() {
+                let now = parseInt(window.getComputedStyle(ele, null)[arg]);
+                if (now === target) {
+                    // console.log('运动完成');
+                    // cb && cb('运动完成');
+                    resolve('运动完成');
+                } else {
+                    ele.style[arg] = now + speed + 'px';
+                    window.requestAnimationFrame(fn);
+                }
+            }
+            fn();
+        })
+    }
+    let ele = document.querySelector('.box');
+    // move(ele, 'left', 200, function (res) {
+    //     move(ele, 'top', 200, function (res) {
+    //         move(ele, 'left', 0, function (res) {
+    //             move(ele, 'top', 0, function (res) {
+    //                 console.log(res);
+    //             })
+    //         })
+    //     })
+    // });
+    // move(ele, 'left', 200).then(res => {
+    //     console.log(res);
+    //     return move(ele, 'top', 200);
+    // }).then(res => {
+    //     console.log(res);
+    //     return move(ele, 'left', 0);
+    // }).then(res => {
+    //     console.log(res);
+    //     return move(ele, 'top', 0);
+    // }).then(res => {
+    //     console.log(res);
+    // });
+    async function fn() {
+        await move(ele, 'left', 200);
+        await move(ele, 'top', 200);
+        await move(ele, 'left', 0);
+        await move(ele, 'top', 0);
+    }
+    fn();
+</script>
+</html>
