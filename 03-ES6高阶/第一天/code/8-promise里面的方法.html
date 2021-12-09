@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(1111);
+            resolve(1);
+        }, 2000)
+    })
+    let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(2222);
+            resolve(2);
+        }, 3000)
+    })
+    let p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(3333);
+            resolve(3);
+            // reject(3);
+        }, 1000)
+    })
+    
+    // Promise.resolve();  返回一个状态为 resolved 的promise对象
+    // Promise.reject();  返回一个状态为 rejected 的promise对象
+    
+    // let p2 = p1.then(() => {
+    //     return Promise.reject();
+    // })
+    // console.log(p2);
+    
+    
+    // 所有的promise都是 resolve 成功，才能拿到结果
+    // Promise.all([p1, p2, p3]).then(res => {
+    //     console.log(res);
+    // })
+    
+    
+    // promise.race  哪个最先执行，返回哪个的执行结果；
+    Promise.race([p1, p2, p3]).then(res => {
+        console.log(res);
+    })
+</script>
+</html>
