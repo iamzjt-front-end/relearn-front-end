@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./zjt-vue.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="app">
+    <!--{{ message }}-->
+    11 {{ message }} 11
+    <div>
+        2222
+        <div>
+            {{ message }}
+            <div></div>
+            <!--{{ noData }}-->
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let vm = new Zvue({
+        el: '#app',
+        data: {
+            message: '测试数据',
+            htmlData: 'html数据'
+        }
+    })
+
+    setTimeout(() => {
+        vm.$options.data.message = '修改数据';
+        console.log(vm.$options.data.message);
+    }, 1000)
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let data = {
+    //     message: '测试数据'
+    // };
+    // Object.defineProperty(data, 'message', {
+    //     get() {
+    //         console.log('触发get()');
+    //         return '测试数据';
+    //     },
+    //     set(newValue) {
+    //         console.log('触发set()', newValue);
+    //     }
+    // })
+    // console.log(data); // 被劫持的data-绑定了get()和set()方法
+    // console.log(data.message);
+    // data.message = '修改数据';
+
+
+    // 如果没有这个属性，会自动创建并劫持
+    let obj = {};
+    Object.defineProperty(obj, 'a', {
+        configurable: true, // 可配置选项为true，才能被delete
+        enumerable: true, // 可枚举的，for in可遍历
+        get() {
+            console.log('触发get()');
+            return '1111';
+        },
+        set(newValue) {
+            console.log('触发set()', newValue);
+        }
+    })
+    // delete obj.a;
+    console.log(obj);
+
+    for (let i in obj) {
+        console.log(i);
+    }
+</script>
+</html>
