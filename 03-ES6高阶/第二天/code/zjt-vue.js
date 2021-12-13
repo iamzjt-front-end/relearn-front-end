@@ -57,14 +57,22 @@ class Zvue extends EventTarget {
                     let attrValue = attr.value;
                     if (attrName.startsWith('v-', 0)) {
                         attrName = attrName.substr(2);
-                        if (attrName === 'html') {
-                            if (this.$options.data.hasOwnProperty(attrValue)) {
+                        // 先判断data中有没有此项数据
+                        if (this.$options.data.hasOwnProperty(attrValue)) {
+                            // 再判断是哪个指令
+                            if (attrName === 'html') {
                                 node.innerHTML = this.$options.data[attrValue];
-                            } else {
-                                throw new Error(`${attrValue} is not defined`);
+                            } else if (attrName === 'model') {
+                                // 1.当前节点的值要等于绑定的数据   数据 --->节点值
+                                // 2.当前节点值发生变化时，数据也得发生变化   节点值--->数据
+                                node.value = this.$options.data[attrValue];
+                                node.addEventListener('input', e => {
+                                    // console.log(e.target.value);
+                                    this.$options.data[attrValue] = e.target.value;
+                                })
                             }
-                        } else if (attrName === 'model') {
-
+                        } else {
+                            throw new Error(`${attrValue} is not defined`);
                         }
                     }
                 })
