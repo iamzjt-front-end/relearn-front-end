@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="module">
+// import num from './a.js';
+// console.log(num);
+// console.log(c);
+
+// import { b as d, c } from './a.js';
+// console.log(d, c);
+
+// import * as obj from './a.js';
+// console.log(obj);
+
+// console.log(this); // undefined
+// 原因：采用模块化以后，这里的代码就采用严格模式，就没有this
+
+// 按需导入（延迟导入）: import方法：返还一个promise对象；
+document.onclick = async function() {
+    // import num from './a.js';
+    // import('./a.js').then(res => {
+    //     console.log(res);
+    // })
+    let res = await import('./a.js');
+    console.log(res);
+}
+</script>
+</html>
