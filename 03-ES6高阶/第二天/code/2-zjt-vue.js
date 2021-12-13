@@ -1,3 +1,5 @@
+// 作业：将Zvue模块化（划分两个模块：Zvue类和Compile类）
+
 class Zvue extends EventTarget {
     constructor(options) {
         super(); // 继承以后需要super()一下
