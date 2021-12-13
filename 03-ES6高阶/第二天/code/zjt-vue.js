@@ -43,11 +43,31 @@ class Zvue extends EventTarget {
         let childNodes = el.childNodes;
         // console.log(childNodes);
         childNodes.forEach(node => {
-            if (node.nodeType === 1) { // 标签 - 递归调用
+            if (node.nodeType === 1) { // 标签
+                // 递归调用 嵌套双向绑定
                 // console.log(node.childNodes); // list
                 if (node.childNodes.length > 0) {
                     this.compileNode(node);
                 }
+
+                // 指令实现
+                let attrs = node.attributes;
+                [...attrs].forEach(attr => {
+                    let attrName = attr.name;
+                    let attrValue = attr.value;
+                    if (attrName.startsWith('v-', 0)) {
+                        attrName = attrName.substr(2);
+                        if (attrName === 'html') {
+                            if (this.$options.data.hasOwnProperty(attrValue)) {
+                                node.innerHTML = this.$options.data[attrValue];
+                            } else {
+                                throw new Error(`${attrValue} is not defined`);
+                            }
+                        } else if (attrName === 'model') {
+
+                        }
+                    }
+                })
             } else if (node.nodeType === 3) { // 文本
                 let reg = /\{\{\s*(\S+)\s*\}\}/g;
                 let textContent = node.textContent;
